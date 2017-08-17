@@ -1,0 +1,23 @@
+{
+  "name": "bootcamppartto",
+  "version": "1.0.0",
+  "description": "Too bloggers relate about their experience as boot camp participants to become dope developers after knowing a little bit about military boot camp from past lives two.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JenSchumann/BootCampPartTO.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JenSchumann/BootCampPartTO/issues"
+  },
+  "homepage": "https://github.com/JenSchumann/BootCampPartTO#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}

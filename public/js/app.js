@@ -30,6 +30,40 @@ app.controller('BlogController', ['$http', function($http){
     });
   }
 
+  this.updateArticle = function(oneArticle){
+    $http({
+      method: 'PUT',
+      url: '/articles/' + articles._id,
+      data: {
+        author: oneArticle.author,
+        article: oneArticle.article
+      }
+    }).then(
+      function(response){
+        console.log("the update works")
+        controller.getArticles();
+      },
+      function(err){
+
+      }
+    );
+  }
+
+  this.deleteArticle = function(oneArticle){
+    // console.log('button working')
+    $http({
+      method: 'DELETE',
+      url: '/articles/' + oneArticle._id
+    }).then(
+      function(response){
+        controller.getArticles();
+      },
+      function(err){
+
+      }
+    );
+  }
+
   this.getArticles();
 
 }]);

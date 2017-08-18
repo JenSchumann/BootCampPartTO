@@ -20,25 +20,6 @@ mongoose.connect('mongodb://localhost:27017/bootcamptooo');
 mongoose.connection.once('open', ()=>{
     console.log('connected to mongo');
 });
-
-
-
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> 2c51994a1ed54d29de4b475af7d69d1101614c20
 app.listen(3000, ()=>{
     console.log('BootCampPartTo is listening, oorah!');
 });

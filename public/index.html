@@ -15,21 +15,28 @@
     <form ng-submit="ctrl.createdArticles()">
       <h3>Create Your Article</h3>
       <!-- <p>{{ctrl.author}}, {{ctrl.article}}</p></br> -->
+
       <input type="text" ng-model="ctrl.author" name"title" placeholder="Author Name"/></br>
       <textarea type="text" ng-model="ctrl.article" name="body" placeholder="Enter article here."></textarea></br>
       <input type="submit" value="Add Your Article!"/></br>
     </form>
     <!-- Insert articles here in flex-direction: reverse-column -->
+
     <div ng-repeat="oneArticle in ctrl.articles">
-      <h3>{{oneArticle.author}}</h3>
-      <p>{{oneArticle.article}}</p>
-      <!-- <span ng-click="ctrl.updateArticle(oneArticle)">{{oneArticle.article}}</span> -->
-      <button ng-click="ctrl.deleteArticle(oneArticle)">Delete</button>
-    </div>
-    <!-- <form
-     ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editTodo(oneTodo)">
-      <input type="text" ng-model="ctrl.updatedDescription"/>
-      <input type="submit" value="Update Description"/>
-    </form> -->
+      <h3>{{oneArticle.author}}</h3> </br>
+      <!-- <p>{{oneArticle.article}}</p> </br> -->
+      <span ng-click="ctrl.updateArticle(oneArticle)">{{oneArticle.article}}</span> </br>
+      <button ng-click="ctrl.deleteArticle(oneArticle)">Delete Article</button> </br>
+
+      <a href="#" ng-click="ctrl.indexOfEditFormToShow = $index;">Edit This Article</a>
+      <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editArticle(oneArticle);">
+
+    <form ng-submit="ctrl.updateArticle(oneArticle)">
+      <h3>Update Article</h3> </br>
+      <textarea type="text" ng-model="ctrl.updateArticle" placeholder="Updated Article"/> </textarea></br>
+      <input type="submit" value="Update Article"/> </br>
+
+      </div>
+    </form>
   </body>
 </html>

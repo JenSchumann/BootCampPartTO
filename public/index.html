@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="BlogApp">
   <head>
     <meta charset="utf-8">
     <title>Boot Kamp: Part To</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <!-- <script src="put app.js here"></script> -->
+    <script src="/js/app.js"></script>
     <!-- <link rel="stylesheet" href="put css here"> -->
   </head>
-  <body>
+  <body ng-controller="BlogController as ctrl">
     <h1>Boot Kamp: Part To</h1>
     <h2>Agonizing with Angular? Screaming at (Java)Script? Tell us about it! Share your sufferings during WDI Boot Camp!</h2>
-
+    {{ctrl.articles}}
     <!-- Put 'Create An Article' here... -->
-    <form>
-      <input type="text" name"title"/></br>
-      <textarea name="body"></textarea></br>
+    <form ng-submit="ctrl.createdArticles()">
+      <h3>Create Your Article</h3>
+      <p>{{ctrl.author}}, {{ctrl.article}}</p></br>
+      <input type="text" ng-model="ctrl.author" name"title" placeholder="Author Name"/></br>
+      <textarea type="text" ng-model="ctrl.article" name="body" placeholder="Enter article here."></textarea></br>
       <input type="submit" value="Add Your Article!"/></br>
     </form>
     <!-- Insert articles here in flex-direction: reverse-column -->
-    <div ng-repeat>
+    <!-- <div ng-repeat>
       <h3>{{______}}</h3>
       <p>{{______}}<p>
       <span ng-click="use update function here">Update</span>
       <button ng-click="use delete function here">Delete</button>
-    </div>
+    </div> -->
 
   </body>
 </html>

@@ -3,8 +3,9 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+
 app.use(bodyParser.json());
-app.use(express.static('public');)
+app.use(express.static('public'));
 
 //to test server:  (transfering all routing to a controller/articles.js file)
 // app.get('/', (req, res)=>{

@@ -10,22 +10,26 @@
   <body ng-controller="BlogController as ctrl">
     <h1>Boot Kamp: Part To</h1>
     <h2>Agonizing with Angular? Screaming at (Java)Script? Tell us about it! Share your sufferings during WDI Boot Camp!</h2>
-    {{ctrl.articles}}
+    <!-- {{ctrl.articles}} -->
     <!-- Put 'Create An Article' here... -->
     <form ng-submit="ctrl.createdArticles()">
       <h3>Create Your Article</h3>
-      <p>{{ctrl.author}}, {{ctrl.article}}</p></br>
+      <!-- <p>{{ctrl.author}}, {{ctrl.article}}</p></br> -->
       <input type="text" ng-model="ctrl.author" name"title" placeholder="Author Name"/></br>
       <textarea type="text" ng-model="ctrl.article" name="body" placeholder="Enter article here."></textarea></br>
       <input type="submit" value="Add Your Article!"/></br>
     </form>
     <!-- Insert articles here in flex-direction: reverse-column -->
-    <!-- <div ng-repeat>
-      <h3>{{______}}</h3>
-      <p>{{______}}<p>
-      <span ng-click="use update function here">Update</span>
-      <button ng-click="use delete function here">Delete</button>
-    </div> -->
-
+    <div ng-repeat="oneArticle in ctrl.articles">
+      <h3>{{oneArticle.author}}</h3>
+      <p>{{oneArticle.article}}</p>
+      <!-- <span ng-click="ctrl.updateArticle(oneArticle)">{{oneArticle.article}}</span> -->
+      <button ng-click="ctrl.deleteArticle(oneArticle)">Delete</button>
+    </div>
+    <!-- <form
+     ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editTodo(oneTodo)">
+      <input type="text" ng-model="ctrl.updatedDescription"/>
+      <input type="submit" value="Update Description"/>
+    </form> -->
   </body>
 </html>

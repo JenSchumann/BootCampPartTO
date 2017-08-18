@@ -33,7 +33,7 @@ app.controller('BlogController', ['$http', function($http){
   this.updateArticle = function(oneArticle){
     $http({
       method: 'PUT',
-      url: '/articles/' + articles._id,
+      url: '/articles/' + oneArticle._id,
       data: {
         author: oneArticle.author,
         article: oneArticle.article
@@ -49,6 +49,30 @@ app.controller('BlogController', ['$http', function($http){
       }
     );
   }
+
+  this.editArticle = function(oneArticle){
+      //test after span & ng click in html has been added
+        console.log(oneArticle);
+        $http({
+          method: 'PUT',
+          url: '/articles/' + oneArticle._id,
+          data: {
+            author: this.updateAuthor,
+            article: this.updateArticle
+          }
+        }).then(
+          //telling what to do when it has gathered data.. simplest is to add new & refresh all data
+          function(response){
+            console.log('this is Jens dope update');
+            //adds new article created to the page automatically
+              controller.getArticles();
+
+          },
+          function(error){
+
+          }
+        );
+      }
 
   this.deleteArticle = function(oneArticle){
     // console.log('button working')

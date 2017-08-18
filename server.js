@@ -23,6 +23,7 @@ mongoose.connection.once('open', ()=>{
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -36,6 +37,8 @@ mongoose.connection.once('open', ()=>{
 
 
 
+=======
+>>>>>>> 2c51994a1ed54d29de4b475af7d69d1101614c20
 app.listen(3000, ()=>{
     console.log('BootCampPartTo is listening, oorah!');
 });

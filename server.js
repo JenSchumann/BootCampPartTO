@@ -3,6 +3,7 @@ const app = express();
 
 app.get('/', (req, res)=>{
   res.send('do ammo can lifts!')
+  console.log('we do ammo can lifts together!!');
 });
 
 

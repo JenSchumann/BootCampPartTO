@@ -41,6 +41,7 @@ app.controller('BlogController', ['$http', function($http){
     }).then(
       function(response){
         console.log("the update works")
+        console.log("Jen trying to add her dope code and push to upstream without breaking BootCampPartTo");
         controller.getArticles();
       },
       function(err){
